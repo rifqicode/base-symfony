@@ -1,0 +1,32 @@
+- { code: '11', name: 'DI. ACEH' }
+- { code: '12', name: 'SUMATERA UTARA' }
+- { code: '13', name: 'SUMATERA BARAT' }
+- { code: '14', name: 'RIAU' }
+- { code: '15', name: 'JAMBI' }
+- { code: '16', name: 'SUMATERA SELATAN' }
+- { code: '17', name: 'BENGKULU' }
+- { code: '18', name: 'LAMPUNG' }
+- { code: '19', name: 'BANGKA BELITUNG' }
+- { code: '31', name: 'DKI JAKARTA' }
+- { code: '32', name: 'JAWA BARAT' }
+- { code: '33', name: 'JAWA TENGAH' }
+- { code: '34', name: 'DAERAH ISTIMEWA YOGYAKARTA' }
+- { code: '35', name: 'JAWA TIMUR' }
+- { code: '36', name: 'PROBANTEN' }
+- { code: '51', name: 'BALI' }
+- { code: '52', name: 'NUSATENGGARA BARAT' }
+- { code: '53', name: 'NUSA TENGGARA TIMUR' }
+- { code: '61', name: 'KALIMANTAN BARAT' }
+- { code: '62', name: 'KALIMANTAN TENGAH' }
+- { code: '63', name: 'KALIMANTAN SELATAN' }
+- { code: '64', name: 'KALIMANTAN TIMUR' }
+- { code: '71', name: 'SULAWESI UTARA' }
+- { code: '72', name: 'SULAWESI TENGAH' }
+- { code: '73', name: 'SULAWESI SELATAN' }
+- { code: '74', name: 'SULAWESI TENGGARA' }
+- { code: '75', name: 'GORONTALO' }
+- { code: '81', name: 'MALUKU' }
+- { code: '82', name: 'IRIAN JAYA TIMUR' }
+- { code: '83', name: 'MALUKU UTARA' }
+- { code: '92', name: 'IRIAN JAYA BARAT' }
+- { code: 'b', name: 'IRIAN JAYA TENGAH' }

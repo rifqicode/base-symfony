@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}" />
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/vendor/bootstrap/css/bootstrap.min.css') }} ">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }} ">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }} ">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/vendor/animate/animate.css') }} ">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/vendor/css-hamburgers/hamburgers.min.css') }} ">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/vendor/animsition/css/animsition.min.css') }} ">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/vendor/select2/select2.min.css') }} ">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/vendor/daterangepicker/daterangepicker.css') }} ">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/css/util.css') }} ">
+	<link rel="stylesheet" type="text/css" href="{{ asset('template_login/css/main.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/sweetalert2.min.css') }}">
+<!--===============================================================================================-->
+<style>
+	select{
+		border: 0px;
+		margin-left: 70px;
+		width: 75% !important;
+	}
+</style>
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url({{ asset('img/login.jpeg') }});">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41 text-center">
+					Admin Login
+				</span>
+				<form class="login100-form p-b-33 p-t-5" action="{{ path('login_check') }}" method="post">
+					
+					<div class="wrap-input100">
+						<input class="input100" type="text" placeholder="User name" id="login" name="_username" value="{{ username }}" placeholder="{{ 'label.login.username' | trans }}">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="password" id="password" name="_password"  placeholder="{{ 'label.login.password' | trans }}">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+          			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn" type="submit">
+							{{ 'label.login.button' | trans }}
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+<script src="{{ asset('lib/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+<script>
+    function createCookie(name, value, days) {
+        var expires;
+
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        } else {
+            expires = "";
+        }
+        document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+    }
+</script>
+  {% if error %}
+      <script src="{{ asset('js/sweetalert2.min.js') }}"></script>
+      <script>
+          setTimeout(function () {
+              Swal.fire({
+                  title: '{{ 'label.login.error_title' | trans }}',
+                  text: '{{ 'label.login.error_message' | trans }}',
+                  type: 'error'
+              });
+          }, 1727);
+      </script>
+  {% endif %}
+</body>
+</html>

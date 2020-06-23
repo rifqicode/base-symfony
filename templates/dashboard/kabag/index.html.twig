@@ -1,0 +1,151 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}{% apply spaceless %}
+  <style media="screen">
+
+    /* style only for this page */
+
+    .info-box-content {
+      padding: 12px 10px;
+      margin-left: 110px;
+    }
+
+    .info-box-icon {
+      background: white;
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 1px;
+      border: 5;
+      border-top: 1px solid #232121;
+    }
+
+    i.round {
+      display: inline-block;
+      border-radius: 60px;
+      box-shadow: 0px 0px 2px #888;
+      padding: 0.5em 0.6em;
+    }
+  </style>
+{% endapply %}{% endblock %}
+
+{% block title %}{% apply spaceless %}{{ title | upper }}{% endapply %}{% endblock %}
+
+{% block page_title %}{% apply spaceless %}{{ title }}{% endapply %}{% endblock %}
+
+{% block content %}{% apply spaceless %}
+
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon"><i class="fa fa-line-chart round bg-aqua"></i></span>
+
+              <div class="info-box-content">
+                <h3> Rp. 3.5 M <span> <i class="fa fa-download"></i> </span> </h3>
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-12 text-center nopadding bg-aqua">
+              <h4><b> Anggaran </b></h4>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon"><i class="fa fa-pie-chart round bg-green"></i></span>
+
+              <div class="info-box-content">
+                <h3> Rp. 1.2 M <span> <i class="fa fa-download"></i> </span> </h3>
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-12 text-center nopadding bg-green">
+              <h4><b> Realisasi </b></h4>
+            </div>
+          </div>
+
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon"><i class="fa fa-tasks round bg-red"></i></span>
+
+              <div class="info-box-content">
+                <h3> Rp. 200 <span> <i class="fa fa-download"></i> </span> </h3>
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-12 text-center nopadding bg-red">
+              <h4><b> Jumlah Kegiatan </b></h4>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon"><i class="fa fa-area-chart round bg-yellow"></i></span>
+
+              <div class="info-box-content">
+                <h3> Rp. 20 <span> <i class="fa fa-download"></i> </span> </h3>
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-12 text-center nopadding bg-yellow">
+              <h4><b> Realisasi Kegiatan </b></h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <br>
+          <div class="col-md-12 nopadding">
+            <div class="box box-success">
+
+              <div class="box-header with-border">
+                <h3 class="box-title">Daftar Kegiatan</h3>
+
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+              </div>
+
+              <div class="box-body">
+                <div class="col-md-12">
+                  <table class="table table-stripper">
+                    <thead style="background: #8fb7e8;">
+                      <th> No </th>
+                      <th> Program </th>
+                      <th> Jumlah Kegiatan </th>
+                      <th> Penerima Manfaat </th>
+                      <th> Jumlah Anggaran </th>
+                      <th> Pic </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td> 1 </td>
+                        <td> Dukungan Nakes </td>
+                        <td> 10 </td>
+                        <td> 500 </td>
+                        <td> Rp. 2.500.000.000 </td>
+                        <td> xxxxx </td>
+                      </tr>
+                      <tr>
+                        <td> 2 </td>
+                        <td> Pemberian Sembako </td>
+                        <td> 50 </td>
+                        <td> 1000 </td>
+                        <td> Rp. 500.000.000 </td>
+                        <td> xxxxx </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+{% endapply %}{% endblock %}
+
+{% block javascripts %}{% apply spaceless %}
+{% endapply %}{% endblock %}

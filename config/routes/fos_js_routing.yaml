@@ -1,0 +1,2 @@
+fos_js_routing:
+    resource: "fos_js_routing.xml"

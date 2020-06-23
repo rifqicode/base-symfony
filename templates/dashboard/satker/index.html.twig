@@ -1,0 +1,412 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}{% apply spaceless %}
+  <style media="screen">
+
+    /* style only for this page */
+
+    .info-box-content {
+      padding: 12px 10px;
+      margin-left: 110px;
+    }
+
+    .info-box-icon {
+      background: white;
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 1px;
+      border: 5;
+      border-top: 1px solid #232121;
+    }
+
+    i.round {
+      display: inline-block;
+      border-radius: 60px;
+      box-shadow: 0px 0px 2px #888;
+      padding: 0.5em 0.6em;
+    }
+  </style>
+{% endapply %}{% endblock %}
+
+{% block title %}{% apply spaceless %}{{ title | upper }}{% endapply %}{% endblock %}
+
+{% block page_title %}{% apply spaceless %}{{ title }}{% endapply %}{% endblock %}
+
+{% block content %}{% apply spaceless %}
+
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon"><i class="fa fa-line-chart round bg-aqua"></i></span>
+
+              <div class="info-box-content">
+                <h3> Rp. 1.5 M <span> <i class="fa fa-download"></i> </span> </h3>
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-12 text-center nopadding bg-aqua">
+              <h4><b> Anggaran </b></h4>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon"><i class="fa fa-pie-chart round bg-green"></i></span>
+
+              <div class="info-box-content">
+                <h3> Rp. 200 jt <span> <i class="fa fa-download"></i> </span> </h3>
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-12 text-center nopadding bg-green">
+              <h4><b> Realisasi </b></h4>
+            </div>
+          </div>
+
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon"><i class="fa fa-tasks round bg-red"></i></span>
+
+              <div class="info-box-content">
+                <h3> Rp. 100 <span> <i class="fa fa-download"></i> </span> </h3>
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-12 text-center nopadding bg-red">
+              <h4><b> Jumlah Kegiatan </b></h4>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon"><i class="fa fa-area-chart round bg-yellow"></i></span>
+
+              <div class="info-box-content">
+                <h3> Rp. 25 <span> <i class="fa fa-download"></i> </span> </h3>
+              </div>
+              <hr>
+            </div>
+            <div class="col-md-12 text-center nopadding bg-yellow">
+              <h4><b> Realisasi Kegiatan </b></h4>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <br>
+          <div class="col-md-8 nopadding">
+            <div class="box box-success">
+
+              <div class="box-header with-border">
+                <h3 class="box-title">PETA PROGRAM PER LOKASI</h3>
+
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+              </div>
+
+              <div class="box-body">
+                <div class="col-md-12">
+                  <div id="indonesia-map"></div>
+                </div>
+                <div class="col-md-12">
+                  <table class="table table-stripper">
+                    <thead style="background: #8fb7e8;">
+                      <th> No </th>
+                      <th> Program </th>
+                      <th> Jumlah Kegiatan </th>
+                      <th> Penerima Manfaat </th>
+                      <th> Jumlah Anggaran </th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td> 1 </td>
+                        <td> Dukungan Nakes </td>
+                        <td> 10 </td>
+                        <td> 500 </td>
+                        <td> Rp. 2.500.000.000 </td>
+                      </tr>
+                      <tr>
+                        <td> 2 </td>
+                        <td> Pemberian Sembako </td>
+                        <td> 50 </td>
+                        <td> 1000 </td>
+                        <td> Rp. 500.000.000 </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-4 nopadding">
+            <div class="box box-warning">
+
+              <div class="box-header with-border">
+                <h3 class="box-title">GRAFIK KEGIATAN PER PROGRAM</h3>
+
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+              </div>
+
+              <div class="box-body">
+                <div class="col-md-12">
+                  <div id="grafik-program"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="row">
+            <br>
+            <div class="box box-success">
+                <div id="realisasi-satker"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+
+          <div class="row">
+            <br>
+            <div class="box box-danger">
+                <br>
+                <table class="table table-stripper">
+                  <thead style="background: #8fb7e8;">
+                    <th> No </th>
+                    <th> Program </th>
+                    <th> Jumlah Kegiatan </th>
+                    <th> Penerima Manfaat </th>
+                    <th> Jumlah Anggaran </th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td> 1 </td>
+                      <td> Pemberian APD kepada rumah sakit </td>
+                      <td> 1000 </td>
+                      <td> 500 </td>
+                      <td> Rp. 1.500.000.000 </td>
+                    </tr>
+                    <tr>
+                      <td> 2 </td>
+                      <td> Pemberian Sembako kepada industri pariwisata </td>
+                      <td> 500 </td>
+                      <td> 200 </td>
+                      <td> Rp. 500.000.000 </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+
+
+{% endapply %}{% endblock %}
+
+{% block javascripts %}{% apply spaceless %}
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/mapdata/countries/id/id-all.js"></script>
+
+
+  <script>
+      let satker = "{{ satker }}";
+
+      let grafik = Highcharts.chart('grafik-program', {
+          chart: {
+              plotBackgroundColor: null,
+              plotBorderWidth: null,
+              plotShadow: false,
+              type: 'pie'
+          },
+          credits: {
+            enabled: false
+          },
+          title: {
+              text: ''
+          },
+          tooltip: {
+              pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          exporting: { enabled: false },
+          accessibility: {
+              point: {
+                  valueSuffix: '%'
+              }
+          },
+          plotOptions: {
+              pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  size: 200,
+                  dataLabels: {
+                      enabled: true,
+                      format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                  }
+              }
+          },
+          series: [{
+              name: 'Kemenparekraf',
+              colorByPoint: true,
+              data: [{
+                  name: 'Dukungan Nakes',
+                  y: 61.41,
+                  sliced: true,
+                  selected: true
+              }, {
+                  name: 'Pemberian Sembako',
+                  y: 11.84
+              }, {
+                  name: 'Revitalisasi',
+                  y: 10.85
+              }]
+          }]
+      });
+
+      var data = [
+          ['id-3700', 0],
+          ['id-ac', 1],
+          ['id-jt', 2],
+          ['id-be', 3],
+          ['id-bt', 4],
+          ['id-kb', 5],
+          ['id-bb', 6],
+          ['id-ba', 7],
+          ['id-ji', 8],
+          ['id-ks', 9],
+          ['id-nt', 10],
+          ['id-se', 11],
+          ['id-kr', 12],
+          ['id-ib', 13],
+          ['id-su', 14],
+          ['id-ri', 15],
+          ['id-sw', 16],
+          ['id-ku', 17],
+          ['id-la', 18],
+          ['id-sb', 19],
+          ['id-ma', 20],
+          ['id-nb', 21],
+          ['id-sg', 22],
+          ['id-st', 23],
+          ['id-pa', 24],
+          ['id-jr', 25],
+          ['id-ki', 26],
+          ['id-1024', 27],
+          ['id-jk', 28],
+          ['id-go', 29],
+          ['id-yo', 30],
+          ['id-sl', 31],
+          ['id-sr', 32],
+          ['id-ja', 33],
+          ['id-kt', 34]
+      ];
+
+      let map = Highcharts.mapChart('indonesia-map', {
+          chart: {
+              map: 'countries/id/id-all'
+          },
+
+          title: {
+              text: 'Peta Program'
+          },
+          credits: {
+            enabled: false
+          },
+          exporting: { enabled: false },
+          mapNavigation: {
+              enabled: true,
+              buttonOptions: {
+                  verticalAlign: 'bottom'
+              }
+          },
+
+          colorAxis: {
+              min: 0
+          },
+
+          series: [{
+              data: data,
+              name: 'Random data',
+              states: {
+                  hover: {
+                      color: '#BADA55'
+                  }
+              },
+              dataLabels: {
+                  enabled: true,
+                  format: '{point.name}'
+              }
+          }]
+      });
+
+      let realisasi_satker = Highcharts.chart('realisasi-satker', {
+          chart: {
+              type: 'column'
+          },
+          credits: {
+            enabled: false
+          },
+          exporting: { enabled: false },
+          title: {
+              text: 'GRAFIK KEGIATAN PER ESELON I'
+          },
+          xAxis: {
+              categories: [
+                  'Eselon 2 I',
+                  'Eselon 2 II',
+                  'Eselon 2 III',
+                  'Eselon 2 IV',
+              ],
+              crosshair: true
+          },
+          yAxis: {
+              min: 0,
+              title: {
+                  text: 'Rainfall (mm)'
+              }
+          },
+          tooltip: {
+              headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+              pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                  '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+              footerFormat: '</table>',
+              shared: true,
+              useHTML: true
+          },
+          plotOptions: {
+              column: {
+                  pointPadding: 0.2,
+                  borderWidth: 0,
+                  point: {
+                      events:{
+                          click: function(e) {
+                              var go = Routing.generate('dashboard_kabag', {name : this.category})
+                              window.open(go , '_blank');
+                          }
+                      }
+                  }
+              },
+          },
+          series: [{
+              name: 'Anggaran',
+              data: [49.9, 71.5, 106.4 , 100]
+
+          }, {
+              name: 'Realisasi',
+              data: [83.6, 78.8, 98.5 , 100]
+
+          }
+        ]
+      });
+  </script>
+{% endapply %}{% endblock %}
